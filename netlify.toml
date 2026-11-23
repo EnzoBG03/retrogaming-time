@@ -1,0 +1,48 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Fichiers générés par Vite : le nom contient un hash, donc cache longue durée sans risque
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Anciennes URL (.html) -> nouvelles routes
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/quoi.html"
+  to = "/quoi"
+  status = 301
+[[redirects]]
+  from = "/concept.html"
+  to = "/concept"
+  status = 301
+[[redirects]]
+  from = "/comment.html"
+  to = "/comment"
+  status = 301
+[[redirects]]
+  from = "/avin.html"
+  to = "/avin"
+  status = 301
+[[redirects]]
+  from = "/opinion.html"
+  to = "/opinion"
+  status = 301
+[[redirects]]
+  from = "/futur.html"
+  to = "/futur"
+  status = 301
+
+# SPA : toute autre URL est servie par React Router (doit rester en dernier)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

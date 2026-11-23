@@ -1,0 +1,70 @@
+/* Styles propres à la page « quoi », isolés par .page-quoi */
+.page-quoi .gameplay-container {
+  width: 100%;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.page-quoi .gameplay-container video {
+  border: 3px solid var(--primary-color);
+}
+
+.page-quoi .convention-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.page-quoi .convention-image {
+  max-width: 350px;
+  border: 3px solid var(--primary-color);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.page-quoi .convention-image:hover {
+  transform: scale(1.05);
+}
+
+.page-quoi .convention-caption {
+  color: var(--text-color);
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 1200px) {
+  .page-quoi .gameplay-container video {
+    width: 640px;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .page-quoi .gameplay-container video {
+    width: 560px;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .page-quoi .gameplay-container video {
+    width: 480px;
+  }
+
+  .page-quoi .convention-image {
+    width: 300px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-quoi .gameplay-container video {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .page-quoi .convention-image {
+    width: 250px;
+  }
+
+  .page-quoi #roule {
+    width: 100px;
+  }
+}

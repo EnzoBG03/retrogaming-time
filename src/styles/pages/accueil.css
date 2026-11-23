@@ -1,0 +1,127 @@
+/* Styles propres à la page « accueil », isolés par .page-accueil */
+.page-accueil .mario-fresque {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 2rem auto;
+  max-width: 1200px;
+  position: relative;
+  border-radius: 15px;
+}
+
+.page-accueil .mario-container {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+
+.page-accueil .mario-sprite {
+  width: 125px;
+  height: 165px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.page-accueil .goomba {
+  width: 170px;
+  transition: all 0.5s ease;
+  vertical-align: middle;
+  transform-origin: center bottom;
+}
+
+.page-accueil .goomba.ecrase {
+  transform: scaleY(0.2);
+  opacity: 0.8;
+  animation: squish 0.75s ease forwards;
+}
+
+.page-accueil .champignon {
+  width: 155px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.page-accueil #termine {
+  padding: 10px 20px;
+  background: var(--highlight-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  position: relative;
+  clear: both;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.page-accueil #termine:hover {
+  background: var(--accent-color);
+  transition: 0.3s ease;
+}
+
+.page-accueil .presentation {
+  padding: 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-accueil .presentation h3 {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 1200px) {
+  .page-accueil .mario-fresque {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .page-accueil .mario-fresque {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .page-accueil .mario-sprite,
+  .page-accueil .goomba,
+  .page-accueil .champignon {
+    width: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-accueil .mario-sprite,
+  .page-accueil .goomba,
+  .page-accueil .champignon {
+    width: 80px;
+  }
+
+  .page-accueil .mario-fresque {
+    padding: 1rem;
+  }
+}
+
+@keyframes squish {
+    0% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+    20% {
+        transform: scaleY(0.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scaleY(0.2);
+        opacity: 0;
+    }
+}
+
+.page-accueil .mario-sprite,
+.page-accueil .goomba,
+.page-accueil .champignon {
+  image-rendering: pixelated;
+}

@@ -1,0 +1,69 @@
+/* Styles propres à la page « concept », isolés par .page-concept */
+.page-concept .logos-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.page-concept .logo-image {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.page-concept .logo-image:hover {
+  transform: scale(1.1);
+}
+
+.page-concept .gameboy-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.page-concept .gameboy-image {
+  transition: transform 0.3s ease;
+}
+
+.page-concept .gameboy-image:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .page-concept .logo-image {
+    width: 180px;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .page-concept .logo-image {
+    width: 150px;
+  }
+
+  .page-concept .gameboy-image {
+    width: 120px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-concept .logos-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .page-concept .logo-image {
+    width: 120px;
+  }
+
+  .page-concept .gameboy-container {
+    gap: 1rem;
+  }
+
+  .page-concept .gameboy-image {
+    width: 100px;
+  }
+}
