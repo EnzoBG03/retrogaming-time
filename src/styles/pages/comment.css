@@ -1,0 +1,38 @@
+/* Styles propres à la page « comment », isolés par .page-comment */
+.page-comment .warning {
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-comment .solutions-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.page-comment .solution-image {
+  transition: transform 0.3s ease;
+}
+
+.page-comment .solution-image:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .page-comment .solution-image {
+    width: 120px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-comment .solutions-container {
+    gap: 1rem;
+  }
+
+  .page-comment .solution-image {
+    width: 100px;
+  }
+}

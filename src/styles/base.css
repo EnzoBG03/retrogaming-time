@@ -1,0 +1,218 @@
+/* Styles communs à toutes les pages (header, navigation, texte). */
+:root {
+  --primary-color: #8b4513;
+  --secondary-color: #deb887;
+  --background-color: #2f4f4f;
+  --text-color: #ffdead;
+  --accent-color: #cd853f;
+  --highlight-color: #d2691e;
+
+  /* Police du texte courant : remplace par une police de lecture pour alléger les paragraphes */
+  --police-texte: 'Press Start 2P', cursive;
+
+  /* Échelle d'espacements */
+  --espace-1: 0.5rem;
+  --espace-2: 1rem;
+  --espace-3: 1.5rem;
+  --espace-4: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--police-texte);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.header {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+        90deg,
+        rgba(0,0,0,0.1),
+        rgba(0,0,0,0.1) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+  pointer-events: none;
+}
+
+.title {
+  font-size: 3rem;
+  text-shadow: 4px 4px var(--accent-color);
+  margin-bottom: 1rem;
+  animation: glitch 1s infinite;
+}
+
+.nav {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-link.active {
+  border-color: var(--highlight-color);
+  background: rgba(210, 105, 30, 0.35);
+}
+
+.nav-link:hover {
+  border-color: var(--highlight-color);
+  background: rgba(210, 105, 30, 0.2);
+  transform: scale(1.1);
+}
+
+.content-section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: var(--espace-4);
+  padding-bottom: var(--espace-2);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.content-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+.content-text {
+  color: var(--text-color);
+  margin-bottom: var(--espace-4);
+  padding: var(--espace-3);
+  font-size: 0.85rem;
+  line-height: 2;
+  background: rgba(0, 0, 0, 0.2);
+  border: 3px solid var(--accent-color);
+  box-shadow: 6px 6px 0 var(--primary-color);
+}
+
+/* Largeur de lecture confortable et espacement régulier (remplace les <br />) */
+.content-text > p {
+  max-width: 70ch;
+  margin: 0 auto var(--espace-3);
+}
+
+.content-text > p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 1200px) {
+  .content-section {
+    padding: 3rem;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .content-text {
+    font-size: 0.9rem;
+  }
+
+  .nav-list {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .content-section {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .nav-list {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .content-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .content-text {
+    font-size: 0.75rem;
+    padding: var(--espace-2);
+  }
+
+  .nav-link {
+    padding: 0.5rem;
+  }
+
+  .content-section {
+    padding: 1rem;
+  }
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
